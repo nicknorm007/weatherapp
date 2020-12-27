@@ -1,4 +1,14 @@
 extends layout
 
 block content
-  p No weather yet :(
+  if forecasts.length
+    table.listing-table.table-dark.table-striped
+      tr
+        th Temp
+        th Forecast
+      each forecast in forecasts
+        tr
+          td= forecast.temperature
+          td= forecast.shortForecast
+  else
+    p No forecasts
