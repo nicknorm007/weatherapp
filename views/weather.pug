@@ -2,13 +2,19 @@ extends layout
 
 block content
   if forecasts.length
-    table.listing-table.table-dark.table-striped
+    table.listing-table.table-striped
       tr
-        th Temp
+        th Name
         th Forecast
+        th Temperature
+        th Wind Speed
+        th Wind Direction
       each forecast in forecasts
         tr
+          td= forecast.name
+          td= forecast.detailedForecast
           td= forecast.temperature
-          td= forecast.shortForecast
+          td= forecast.windSpeed
+          td= forecast.windDirection
   else
     p No forecasts

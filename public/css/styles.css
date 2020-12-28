@@ -2,5 +2,21 @@ body {
     padding: 40px 10px;
     background-color: rgb(238, 238, 238);
   }
-  
-  
+  /* Styles for listing table */
+.listing-table {
+  width: 100%;
+}
+.listing-table th,
+.listing-table td {
+  padding: 10px;
+  border-bottom: 1px solid #666;
+}
+.listing-table th {
+  background: rgb(49, 18, 134);
+  color: #fff;
+}
+.listing-table th,
+.listing-table td {
+  border-right: 1px solid #666;
+  border-left: 1px solid #666;
+}
