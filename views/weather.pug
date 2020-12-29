@@ -13,7 +13,7 @@ block content
         tr
           td= forecast.name
           td= forecast.detailedForecast
-          td= forecast.temperature
+          td(style='background-color:hsla(180, 50%, 50%,0.4)')= forecast.temperature
           td= forecast.windSpeed
           td= forecast.windDirection
   else

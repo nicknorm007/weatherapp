@@ -10,5 +10,6 @@ app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', routes);
 app.use(express.static('public'));
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 
 module.exports = app;

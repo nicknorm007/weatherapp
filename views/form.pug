@@ -1,4 +1,11 @@
 extends layout
 
 block content
-  p No home!
+  .jumbotron
+    h1.display-4 Welcome to Nick's Weather App!
+    p.lead
+      | Get weather and alerts from your favorite places
+    hr.my-4
+    p
+      | Choose your city and weather options below!
+    a#btnBostonWeather.btn.btn-info(href='/weather' role='button') Boston

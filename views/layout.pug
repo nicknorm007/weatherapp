@@ -4,9 +4,20 @@ html
     title= `${title}`
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/styles.css')
+    script(src='/jquery/jquery.js')
+    script(src='/js/scripts.js')
 
   body
-    div.container.listing-reg
-      h1 Nick's Weather App
-
+    div.container
       block content
+    -
+      const author = {
+        firstName: 'Nick',
+        lastName: 'Norman'
+      }
+    p= `${author.firstName} ${author.lastName}`
+    
+    
+      
+
+    
