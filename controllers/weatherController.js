@@ -6,7 +6,11 @@ const weatherController = {
     getWeather (req, res) {
         const data = service.getWeather().then( (result) => {
           const forecast_data = result.data.properties.periods;
-          const forecasts = forecast_data.map(obj=> ({ ...obj, tempColor: '' }));
+          const forecasts = forecast_data.map(function (forecast, index, array) {
+            let tColor = 'hsla(265, 89%, 21%, 0.7)'
+            return ({ ...forecast, tempColor:tColor }); 
+          });
+          //console.log(forecasts);
           res.render('weather', { title: 'Weather data', forecasts: forecasts});
         });
     }

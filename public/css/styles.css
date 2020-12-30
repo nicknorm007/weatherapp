@@ -9,7 +9,7 @@ body {
 .listing-table th,
 .listing-table td {
   padding: 10px;
-  border-bottom: 1px solid #666;
+  border-bottom: 3px solid rgb(2, 1, 20);
 }
 .listing-table th {
   background: rgb(49, 18, 134);
@@ -17,8 +17,8 @@ body {
 }
 .listing-table th,
 .listing-table td {
-  border-right: 1px solid #666;
-  border-left: 1px solid #666;
+  border-right: 3px solid rgb(2, 1, 20);
+  border-left: 3px solid rgb(2, 1, 20);
 }
 .btnWeather {
   padding: 10px;
