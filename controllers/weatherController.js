@@ -5,10 +5,8 @@ const colors = require('../common/colors')
 const weatherController = {
     getWeather (req, res) {
         const data = service.getWeather().then( (result) => {
-          const forecasts = (result.data.properties.periods)
-          .map(obj=> ({ ...obj, tempColor: 'background-color:hsla(180, 50%, 50%,0.7)' }));
-          const nick = colors.getHSLAFromString('nick')
-          console.log(nick);
+          const forecast_data = result.data.properties.periods;
+          const forecasts = forecast_data.map(obj=> ({ ...obj, tempColor: '' }));
           res.render('weather', { title: 'Weather data', forecasts: forecasts});
         });
     }

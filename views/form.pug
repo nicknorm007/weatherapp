@@ -1,11 +1,19 @@
 extends layout
 
 block content
-  .jumbotron
-    h1.display-4 Welcome to Nick's Weather App!
+  .jumbotron.jumbotron-fluid
+    h1.display-4 Welcome to Nick's World of Weather!
     p.lead
       | Get weather and alerts from your favorite places
     hr.my-4
     p
       | Choose your city and weather options below!
-    a#btnBostonWeather.btn.btn-info(href='/weather' role='button') Boston
+    #cityGroups
+      a#btnBostonWeather.btn.btn-info.btnWeather(href='/weather' role='button') Boston
+      #alerts
+      a#btnBostonAlerts.btn.btn-outline-danger.btnWeather(href='/weather' role='button') Alerts
+  img(src='/assets/sun.png' alt='Sun' width='250' height='200')
+  img(src='/assets/rain.png' alt='Sun' width='200' height='200')
+  img(src='/assets/cloud.png' alt='Sun' width='200' height='200')
+  img(src='/assets/rain.png' alt='Sun' width='200' height='200')
+  
