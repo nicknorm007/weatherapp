@@ -1,6 +1,8 @@
 extends layout
 
 block content
+  a#btnGoHome.btn.btn-primary.btn-sm(href='/' role='button') Back Home
+  hr
   if forecasts.length
     table.listing-table.table-striped
       tr
