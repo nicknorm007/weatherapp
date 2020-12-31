@@ -11,7 +11,7 @@ block content
         th Wind Direction
       each forecast in forecasts
         tr
-          td= forecast.name
+          td(style=`background-color:` + `${forecast.nameColor}`)= forecast.name
           td= forecast.detailedForecast
           td(style=`background-color:` + `${forecast.tempColor}`)= forecast.temperature
           td= forecast.windSpeed

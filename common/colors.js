@@ -18,5 +18,43 @@
    return 'hsla(' + hsl[0] + ', 80%, 50%, 0.1)';
 };
 
+const determineTemperatureColor = (temp) => {
+
+    if( temp > 90)
+    {
+        return tempcolor_hsla_map.very_hot
+    }
+    else if (temp > 80)
+    {
+        return tempcolor_hsla_map.hot
+    }
+    else if (temp > 70)
+    {
+        return tempcolor_hsla_map.very_warm
+    }
+    else if (temp > 60)
+    {
+        return tempcolor_hsla_map.warm
+    }
+    else if (temp > 50)
+    {
+        return tempcolor_hsla_map.cool
+    }
+    else if (temp > 40)
+    {
+        return tempcolor_hsla_map.very_cool
+    }
+    else if (temp > 30)
+    {
+        return tempcolor_hsla_map.cold
+    }
+    else
+    {
+        return tempcolor_hsla_map.very_cold
+    }
+    return ''
+};
+
 exports.getHSLAFromString = getHSLAFromString;
 exports.tempcolor_hsla_map = tempcolor_hsla_map;
+exports.determineTemperatureColor = determineTemperatureColor;
