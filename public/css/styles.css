@@ -10,9 +10,10 @@ body {
 .listing-table td {
   padding: 10px;
   border-bottom: 3px solid rgb(2, 1, 20);
+  border-top: 3px solid rgb(2, 1, 20);
 }
 .listing-table th {
-  background: rgb(49, 18, 134);
+  background: hsla(212, 64%, 45%, 0.233);
   color: #fff;
 }
 .listing-table th,
@@ -24,10 +25,10 @@ body {
   padding: 10px;
   margin: 5px;
 }
-#cityGroups {
-  width: 85px;
-  border-right: 2px solid #666;
-  border-left: 2px solid #666;
-  border-top: 2px solid #666;
-  border-bottom: 2px solid #666;
+div#cityGroupings {
+  display: flex;
+  align-items: center;
+}
+#btnGetAlerts {
+  margin-bottom: 8px;
 }

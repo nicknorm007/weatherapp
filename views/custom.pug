@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  a#btnGoHomeCustom.btn.btn-primary.btn-sm(href='/' role='button') Back Home
+  hr
+  .mb-3
+    label.form-label(for='latitude') Latitude
+    input#latitude.form-control(type='text' placeholder='42.3333')
+  .mb-3
+    label.form-label(for='longitude') Longitude
+    input#longitude.form-control(type='text' placeholder='-120.3333')
+
+  a#btnGetCustomForecast.btn.btn-info.btn-lg(href='/weather' role='button') Get Weather

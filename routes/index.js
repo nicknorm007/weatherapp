@@ -11,6 +11,8 @@ const basic = auth.basic({
 });
 
 router.get('/weather', weatherController.getWeather);
+router.get('/custom', weatherController.getCustom);
+router.get('/alerts', weatherController.getAlerts);
 
 router.get('/', (req, res) => {
   res.render('form', { title: 'Weather home' });

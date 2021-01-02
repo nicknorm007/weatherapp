@@ -3,13 +3,13 @@ const Constants = require('../Constants')
 
 const weatherService = {
 
-  async getWeather() {
+  async getWeather(city) {
 
     try {
-      const response = await axios.get(Constants.local_01876_forecast_url)
-      return response
+      return await axios.get(Constants[city])
     } catch (error) {
       console.error(error)
+    } finally {
     }
 
   }

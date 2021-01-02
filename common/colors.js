@@ -44,7 +44,7 @@ const determineTemperatureColor = (temp) => {
     {
         return tempcolor_hsla_map.very_cool
     }
-    else if (temp > 30)
+    else if (temp > 32)
     {
         return tempcolor_hsla_map.cold
     }

@@ -4,17 +4,25 @@ block content
   .jumbotron.jumbotron-fluid
     h1.display-4 Welcome to Nick's World of Weather!
     p.lead
-      | Get weather and alerts from your favorite places
+      | Get weather and alerts color coded to temperature!
     hr.my-4
     p
-      | Choose your city and weather options below!
-    #cityGroups
-      a#btnBostonWeather.btn.btn-info.btnWeather(href='/weather' role='button') Boston
-      #alerts
-      a#btnBostonAlerts.btn.btn-outline-danger.btnWeather(href='/weather' role='button') Alerts
+      | Choose from our favorite places or enter your own custom cooridinates:
+    #cityGroupings
+      a#btnTewksburyWeather.btn.btn-info.btnWeather(href='/weather?city=Tewksbury' role='button') Tewksbury
+      a#btnBostonWeather.btn.btn-info.btnWeather(href='/weather?city=Boston' role='button') Boston
+      a#btnHyannisWeather.btn.btn-info.btnWeather(href='/weather?city=Hyannis' role='button') Hyannis
+      a#btnOrlandoWeather.btn.btn-info.btnWeather(href='/weather?city=Orlando' role='button') Orlando
+      a#btnMiamiWeather.btn.btn-info.btnWeather(href='/weather?city=Miami' role='button') Miami
+      a#btnAustinWeather.btn.btn-info.btnWeather(href='/weather?city=Austin' role='button') Austin
+      a#btnJuneauWeather.btn.btn-info.btnWeather(href='/weather?city=Juneau' role='button') Juneau
+      a#btnDenverWeather.btn.btn-info.btnWeather(href='/weather?city=Denver' role='button') Denver
+      a#btnSanFranWeather.btn.btn-info.btnWeather(href='/weather?city=San Francisco' role='button') San Francisco
+      a#btnCustomWeather.btn.btn-success.btnWeather(href='/custom' role='button') Custom Coordinates
   img(src='/assets/sun.png' alt='Sun' width='250' height='180')
   img(src='/assets/snow.png' alt='Snow' width='200' height='180')
   img(src='/assets/cloud.png' alt='Cloud' width='200' height='180')
   img(src='/assets/rain.png' alt='Rain' width='200' height='180')
+  img(src='/assets/sun.png' alt='Sun' width='250' height='180')
   
   

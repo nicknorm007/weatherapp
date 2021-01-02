@@ -2,7 +2,9 @@ extends layout
 
 block content
   a#btnGoHome.btn.btn-primary.btn-sm(href='/' role='button') Back Home
+  h1=`${city} Weather`
   hr
+  a#btnGetAlerts.btn.btn-danger.btn-sm(href='/alerts' role='button') Get Area Alerts
   if forecasts.length
     table.listing-table.table-striped
       tr
