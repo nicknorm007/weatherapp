@@ -4,10 +4,11 @@ const Constants = require('../Constants')
 
 const weatherService = {
 
-  async getWeather(city,lat,lng) {
+  async getWeather(city, forecastUrl) {
     
     try {
-      return await axios.get( Constants[city] );
+      return (typeof forecastUrl !== undefined) ? 
+        await axios.get( forecastUrl ) : await axios.get( Constants[city] );
     } catch (error) {
         console.error(error)
       } finally {}

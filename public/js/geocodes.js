@@ -4,10 +4,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
       .addEventListener("click", handleLookup);
     
     document.getElementById("btnGetCustomForecast")
-      .addEventListener("click", handleCustomForecast);
+      .addEventListener("click", handleGetForecast);
     
     document.getElementById("btnFindForecastUrl")
-      .addEventListener("click", handleForecastLookup);
+      .addEventListener("click", handleFindForecast);
+
+    document.getElementById("customForecastUrl").style.visibility = "hidden";
 
 });
 
@@ -21,23 +23,17 @@ const handleLookup = () => {
         document.getElementById("longitude").value = data.geometry.lng;
         document.getElementById("timezone").value = data.annotations.timezone.name;
         document.getElementById("formattedPlace").value = data.formatted;
-        document.getElementById("btnGetCustomForecast").classList.remove("disabled");
     });
  }
 
- const handleCustomForecast = () => {
-
-    let place = document.getElementById("formattedPlace").value;
-    let determinedCity = place.split(",")[0];
-    let lat = document.getElementById("latitude").value
-    let lng = document.getElementById("longitude").value
-
-    window.location.href = "http://localhost:3000/weather?city="
-      +determinedCity+"&lat="+lat+"&lng="+lng;
-    
+ const handleGetForecast = () => {
+    let url = document.getElementById("customUrlForecast").value
+    let place = document.getElementById("formattedPlace").value
+    let city = place.split(",")[0]
+    window.location.href = "http://localhost:3000/weather?forecastUrl="+url+"&city="+city
  }
 
- const handleForecastLookup = () => {
+ const handleFindForecast = () => {
 
     let lat = document.getElementById("latitude").value
     let lng = document.getElementById("longitude").value
@@ -45,7 +41,9 @@ const handleLookup = () => {
     fetch("http://localhost:3000/custom/forecast?lat="+lat+"&lng="+lng)
       .then(response => response.json())
       .then( (data) => {
-        document.getElementById("customForecastUrl").value = data.forecast;
+        document.getElementById("customForecastUrl").style.visibility = "visible";
+        document.getElementById("btnGetCustomForecast").classList.remove("disabled");
+        document.getElementById("customUrlForecast").value = data.forecast;
       });
 
  }

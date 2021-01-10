@@ -21,10 +21,11 @@ block content
   .mb-3
     label.form-label(for='formattedPlace') Place
     input#formattedPlace.form-control(type='text' readonly='')
+    input#customUrlForecast.form-control(type='hidden' readonly='')
   a#btnFindForecastUrl.btn.btn-info.btn-lg(role='button') Find Forecast
   .mb-3
-    label.form-label(for='customForecastUrl') Forecast URL
-    input#customForecastUrl.form-control(type='text' readonly='')
+  alert.alert-success(id='customForecastUrl' role='alert')
+    | Success! Found forecast, click Get Forecast to get weather.
   hr
   a#btnGetCustomForecast.btn.btn-primary.btn-sm.disabled(role='button') Get Forecast
   
