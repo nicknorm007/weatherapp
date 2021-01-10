@@ -6,15 +6,17 @@ const colors = require('../common/colors')
 const weatherController = {
     async getWeather (req, res) {
       let city = req.query.city
+      let lat = req.query.lat
+      let lng = req.query.lng
       let formattedCity = city.replace(/\s+/g,"_")
-      const data = await weatherService.getWeather(formattedCity).then( (result) => {
-        const forecast_data = result.data.properties.periods;
-        const forecasts = forecast_data.map((forecast, index, array) => {
+      const data = await weatherService.getWeather(formattedCity,lat,lng)
+        .then( (result) => {
+          const forecast_data = result.data.properties.periods;
+          const forecasts = forecast_data.map((forecast, index, array) => {
             let tColor = colors.determineTemperatureColor(forecast.temperature);
             let nColor = colors.getHSLAFromString(forecast.name);
             return ({ ...forecast, tempColor: tColor, nameColor: nColor });
           });
-          //console.log(forecasts);
         res.render('weather', { title: 'Weather data', forecasts: forecasts, city: city});
       });
     },
@@ -41,6 +43,16 @@ const weatherController = {
         console.log('error', error.message);
       });
             
+    },
+    getCustomForecastUrl (req, res) {
+
+      let lat = req.query.lat;
+      let lng = req.query.lng;
+
+      const forecast = weatherService.getForecastUrl(lat,lng).then( (result) => { 
+        res.json(result.data.properties);
+      });
+
     },
     getAlerts (req, res) {
       res.render('alerts', { title: 'Alerts'});

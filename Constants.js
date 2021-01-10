@@ -1,6 +1,6 @@
 const Constants = {
 
-    tewksbury_metadata_url:'https://api.weather.gov/points/42.6106,-71.2342',
+    points_data_url:'https://api.weather.gov/points/',
     Tewksbury:'https://api.weather.gov/gridpoints/BOX/63,86/forecast',
     Orlando:'https://api.weather.gov/gridpoints/MLB/25,68/forecast',
     Miami:'https://api.weather.gov/gridpoints/MFL/109,49/forecast',

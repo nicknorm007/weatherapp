@@ -32,6 +32,7 @@ div#cityGroupings {
 #btnGetAlerts {
   margin-bottom: 8px;
 }
-#btnLookup {
+#btnLookup,
+#btnFindForecastUrl {
   margin-bottom: 20px;
 }
