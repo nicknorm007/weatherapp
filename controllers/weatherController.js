@@ -4,11 +4,11 @@ const geoService = require('../services/geoService')
 const colors = require('../common/colors')
 
 const weatherController = {
-    async getWeather (req, res) {
+    getWeather (req, res) {
       let city = req.query.city;
       let forecastUrl = req.query.forecastUrl;
       let formattedCity = city.replace(/\s+/g,"_")
-      const data = await weatherService.getWeather(formattedCity, forecastUrl)
+      weatherService.getWeather(formattedCity, forecastUrl)
         .then( (result) => {
           const forecast_data = result.data.properties.periods;
           const forecasts = forecast_data.map((forecast, index, array) => {
