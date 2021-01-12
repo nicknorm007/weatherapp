@@ -2,13 +2,14 @@ const axios = require('axios');
 const weatherService = require('../services/weatherService')
 const geoService = require('../services/geoService')
 const colors = require('../common/colors')
+const retry = require('../common/retry')
 
 const weatherController = {
     getWeather (req, res) {
       let city = req.query.city;
       let forecastUrl = req.query.forecastUrl;
       let formattedCity = city.replace(/\s+/g,"_")
-      weatherService.getWeather(formattedCity, forecastUrl)
+      retry.retry( () => weatherService.getWeather(formattedCity, forecastUrl) )
         .then( (result) => {
           const forecast_data = result.data.properties.periods;
           const forecasts = forecast_data.map((forecast, index, array) => {
