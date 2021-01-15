@@ -26,7 +26,7 @@ body {
   margin: 5px;
 }
 .btnWeather.raised {
-  box-shadow: 3px 3px 3px 3px #293c42;s
+  box-shadow: 3px 3px 3px 3px #293c42;
 }
 div#cityGroupings {
   display: flex;
