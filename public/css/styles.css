@@ -25,6 +25,9 @@ body {
   padding: 10px;
   margin: 5px;
 }
+.btnWeather.raised {
+  box-shadow: 3px 3px 3px 3px #293c42;s
+}
 div#cityGroupings {
   display: flex;
   align-items: center;
@@ -51,3 +54,4 @@ div#cityGroupings {
   line-height: 25px;
   font-size: 10px;
 }
+

@@ -1,16 +1,36 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     
-    document.getElementById("btnLookup")
-      .addEventListener("click", handleLookup);
-    
-    document.getElementById("btnGetCustomForecast")
-      .addEventListener("click", handleGetForecast);
-    
-    document.getElementById("btnFindForecastUrl")
-      .addEventListener("click", handleFindForecast);
+    const btnlookup = document.getElementById("btnLookup");
+    if(typeof(btnlookup) != 'undefined' && btnlookup != null){
+      btnlookup.addEventListener("click", handleLookup);
+    }
 
-    document.getElementById("customForecastUrl").style.visibility = "hidden";
+    const btnGetCustomFcast = document.getElementById("btnGetCustomForecast");
+    if(typeof(btnGetCustomFcast) != 'undefined' && btnGetCustomFcast != null){
+      btnGetCustomFcast.addEventListener("click", handleGetForecast);
+    }
 
+    const btnFindFcast = document.getElementById("btnFindForecastUrl");
+    if(typeof(btnFindFcast) != 'undefined' && btnFindFcast != null){
+      btnFindFcast.addEventListener("click", handleFindForecast);
+    }
+
+    const customFcastUrl = document.getElementById("customForecastUrl");
+    if(typeof(customFcastUrl) != 'undefined' && customFcastUrl != null){
+      customFcastUrl.style.visibility = "hidden";
+    }
+
+    document.querySelectorAll('.btnWeather').forEach(item => {
+      item.addEventListener('mouseover', event => {
+        event.target.classList.remove("raised");
+      });
+    });
+
+    document.querySelectorAll('.btnWeather').forEach(item => {
+      item.addEventListener('mouseout', event => {
+        event.target.classList.add("raised");
+      });
+    });
 });
 
 const handleLookup = () => { 

@@ -2,26 +2,43 @@ extends layout
 
 block content
   .jumbotron.jumbotron-fluid
-    h1.display-4 Welcome to Nick's World of Weather!
+    h1.display-4 Simply Weather
     p.lead
-      | Get weather and alerts color coded to temperature!
+      | Get easy to read weather and alerts!
     hr.my-4
     p
       | Choose from our favorite places or enter your own custom place:
     #cityGroupings
-      a#btnTewksburyWeather.btn.btn-info.btnWeather(href='/weather?forecastUrl=none&city=Tewksbury' role='button') Tewksbury
-      a#btnBostonWeather.btn.btn-info.btnWeather(href='/weather?forecastUrl=none&city=Boston' role='button') Boston
-      a#btnHyannisWeather.btn.btn-info.btnWeather(href='/weather?forecastUrl=none&city=Hyannis' role='button') Hyannis
-      a#btnOrlandoWeather.btn.btn-info.btnWeather(href='/weather?forecastUrl=none&city=Orlando' role='button') Orlando
-      a#btnMiamiWeather.btn.btn-info.btnWeather(href='/weather?forecastUrl=none&city=Miami' role='button') Miami
-      a#btnAustinWeather.btn.btn-info.btnWeather(href='/weather?forecastUrl=none&city=Austin' role='button') Austin
-      a#btnJuneauWeather.btn.btn-info.btnWeather(href='/weather?forecastUrl=none&city=Juneau' role='button') Juneau
-      a#btnDenverWeather.btn.btn-info.btnWeather(href='/weather?forecastUrl=none&city=Denver' role='button') Denver
-      a#btnSanFranWeather.btn.btn-info.btnWeather(href='/weather?forecastUrl=none&city=San Francisco' role='button') San Francisco
-      a#btnCustomWeather.btn.btn-success.btnWeather(href='/custom' role='button') Custom Place
+      a#btnTewksburyWeather.btn.btnWeather.raised(
+        href='/weather?forecastUrl=none&city=Tewksbury' 
+        role='button' style=`background-color:` + `${citymap.Tewksbury.color}`)=citymap.Tewksbury.name
+      a#btnBostonWeather.btn.btnWeather.raised(
+        href='/weather?forecastUrl=none&city=Boston' 
+        role='button' style=`background-color:` + `${citymap.Boston.color}`)=citymap.Boston.name
+      a#btnHyannisWeather.btn.btnWeather.raised(
+        href='/weather?forecastUrl=none&city=Hyannis' 
+        role='button' style=`background-color:` + `${citymap.Hyannis.color}`)=citymap.Hyannis.name
+      a#btnOrlandoWeather.btn.btnWeather.raised(
+        href='/weather?forecastUrl=none&city=Orlando' 
+        role='button' style=`background-color:` + `${citymap.Orlando.color}`)=citymap.Orlando.name
+      a#btnMiamiWeather.btn.btnWeather.raised(
+        href='/weather?forecastUrl=none&city=Miami' 
+        role='button' style=`background-color:` + `${citymap.Miami.color}`)=citymap.Miami.name
+      a#btnAustinWeather.btn.btnWeather.raised(
+        href='/weather?forecastUrl=none&city=Austin' 
+        role='button' style=`background-color:` + `${citymap.Austin.color}`)=citymap.Austin.name
+      a#btnJuneauWeather.btn.btnWeather.raised(
+        href='/weather?forecastUrl=none&city=Juneau' 
+        role='button' style=`background-color:` + `${citymap.Juneau.color}`)=citymap.Juneau.name
+      a#btnDenverWeather.btn.btnWeather.raised(
+        href='/weather?forecastUrl=none&city=Denver' 
+        role='button' style=`background-color:` + `${citymap.Denver.color}`)=citymap.Denver.name
+      a#btnSanFranWeather.btn.btnWeather.raised(
+        href='/weather?forecastUrl=none&city=San Francisco' 
+        role='button' style=`background-color:` + `${citymap.San_Francisco.color}`)=citymap.San_Francisco.name     
+      a#btnCustomWeather.btn.btn-success.btnWeather.raised(href='/custom' role='button') Custom Place
   img(src='/assets/sun.png' alt='Sun' width='250' height='180')
   img(src='/assets/snow.png' alt='Snow' width='200' height='180')
-  img(src='/assets/cloud.png' alt='Cloud' width='200' height='180')
   img(src='/assets/rain.png' alt='Rain' width='200' height='180')
   img(src='/assets/sun.png' alt='Sun' width='250' height='180')
   
