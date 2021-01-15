@@ -17,7 +17,8 @@ const weatherController = {
             let nColor = colors.getHSLAFromString(forecast.name);
             return ({ ...forecast, tempColor: tColor, nameColor: nColor });
           });
-        res.render('weather', { title: 'Weather data', forecasts: forecasts, city: city});
+        res.render('weather', { title: 'Weather data', forecasts: forecasts, city: city,
+          colormap: colors.tempcolor_hsla_map});
       });
     },
     getCustom (req, res) {

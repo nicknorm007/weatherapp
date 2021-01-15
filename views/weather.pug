@@ -4,16 +4,16 @@ block content
   a#btnGoHome.btn.btn-primary.btn-sm(href='/' role='button') Back Home
   h1=`${city} Weather`
   hr
-  .flex-container
+  .flex-container.tempbar
     div Colder
-    div#lverycold
-    div#lcold 
-    div#lverycool 
-    div 
-    div 
-    div 
-    div 
-    div 
+    div#lverycold(style=`background-color:` + `${colormap.very_cold}`)
+    div#lcold(style=`background-color:` + `${colormap.cold}`) 
+    div#lverycool(style=`background-color:` + `${colormap.very_cool}`) 
+    div#cool(style=`background-color:` + `${colormap.cool}`) 
+    div#warm(style=`background-color:` + `${colormap.warm}`) 
+    div#verywarm(style=`background-color:` + `${colormap.very_warm}`) 
+    div#hot(style=`background-color:` + `${colormap.hot}`) 
+    div#veryhot(style=`background-color:` + `${colormap.very_hot}`) 
     div Hotter
   a#btnGetAlerts.btn.btn-danger.btn-sm(href='/alerts' role='button') Get Area Alerts
   if forecasts.length
