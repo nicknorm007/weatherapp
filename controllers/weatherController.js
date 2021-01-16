@@ -45,16 +45,6 @@ const weatherController = {
       });
             
     },
-    getCustomForecastUrl (req, res) {
-
-      let lat = req.query.lat;
-      let lng = req.query.lng;
-
-      const forecast = weatherService.getForecastUrl(lat,lng).then( (result) => { 
-        res.json(result.data.properties);
-      });
-
-    },
     getAlerts (req, res) {
       res.render('alerts', { title: 'Alerts'});
     }
