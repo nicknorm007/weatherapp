@@ -46,7 +46,22 @@ const weatherController = {
             
     },
     getAlerts (req, res) {
-      res.render('alerts', { title: 'Alerts'});
+
+      let state='CO'
+
+      retry.retry( () => weatherService.getWeatherAlerts(state) )
+        .then( (result) => {
+          let areaDesc="",headline="",description="",instruction="";          
+          if( typeof(result.data.features[0]) !== "undefined" )
+          {
+            areaDesc = result.data.features[0].properties.areaDesc
+            headline = result.data.features[0].properties.headline
+            description = result.data.features[0].properties.description
+            instruction = result.data.features[0].properties.instruction
+          }
+          res.render('alerts', { title: 'Alerts', areaDesc:areaDesc, 
+            headline:headline, description:description, instruction:instruction} );
+        });
     }
 }
 

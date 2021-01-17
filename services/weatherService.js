@@ -4,15 +4,16 @@ const Constants = require('../Constants')
 
 const weatherService = {
 
-  getWeather(city, forecastUrl) {
-    
-    try {
-      return ( forecastUrl !== "none") ? 
-        axios.get( forecastUrl ) : axios.get( Constants[city] );
-    } catch (error) {
-        console.error(error)
-      }
-  }
+  async getWeather(city, forecastUrl) {
+    const data = (forecastUrl !== "none") ? 
+      await axios.get( forecastUrl ) : await axios.get( Constants[city] );
+    return data;
+  },
+  async getWeatherAlerts(state) {
+    const data = await axios.get( `${Constants.AlertUrl}?area=${state}` );
+    return data;
+  },
+
 }
 
 module.exports = weatherService;

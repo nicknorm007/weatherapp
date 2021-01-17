@@ -36,7 +36,8 @@ div#cityGroupings {
   margin-bottom: 8px;
 }
 #btnLookup,
-#btnFindForecastUrl {
+#btnFindForecastUrl,
+#btnGoHomeAlerts {
   margin-bottom: 20px;
 }
 .flex-container {

@@ -8,7 +8,7 @@
  * @param {Boolean} exponential - Flag for exponential back-off mode
  * @return {Promise<*>}
  */
-async function retry(fn, retriesLeft = 5, interval = 1000, exponential = false) {
+async function retry(fn, retriesLeft = 10, interval = 1000, exponential = false) {
     try {
       const val = await fn();
       return val;
