@@ -47,20 +47,19 @@ const weatherController = {
     },
     getAlerts (req, res) {
 
-      let state='CO'
-
-      retry.retry( () => weatherService.getWeatherAlerts(state) )
-        .then( (result) => {
-          let areaDesc="",headline="",description="",instruction="";          
-          if( typeof(result.data.features[0]) !== "undefined" )
-          {
-            areaDesc = result.data.features[0].properties.areaDesc
-            headline = result.data.features[0].properties.headline
-            description = result.data.features[0].properties.description
-            instruction = result.data.features[0].properties.instruction
+      let state=req.query.state, abbrev=req.query.abbrev;
+      const alertsFeatures=[];
+      retry.retry( () => weatherService.getWeatherAlerts(abbrev) )
+        .then( (result) => {      
+          if( typeof(result.data.features[0]) !== "undefined" ){
+            result.data.features.forEach(alert => 
+              alertsFeatures.push(alert.properties))
           }
-          res.render('alerts', { title: 'Alerts', areaDesc:areaDesc, 
-            headline:headline, description:description, instruction:instruction} );
+          else{
+            alertsFeatures.push({areaDesc:"No alerts at this time!", 
+              headline:"", description:"", instruction:""})
+          }
+          res.render('alerts', { title: 'Alerts', alerts:alertsFeatures, state:state } );
         });
     }
 }

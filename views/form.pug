@@ -31,7 +31,64 @@ block content
         href='/weather?forecastUrl=none&city=San Francisco' 
         role='button' style=`background-color:` + `${citymap.San_Francisco.color}`)=citymap.San_Francisco.name     
       a#btnCustomWeather.btn.btn-success.btnWeather.raised(href='/custom' role='button') Custom Place
-      a#btnCustomWeather.btn.btn-danger.btnWeather.raised(href='/alerts' role='button') Get Alerts
+    hr.my-4
+    p
+      | Select state to see weather alerts:
+    #alerts
+      select#stateSelect
+        option(selected='') Select State
+        option(value='AL') Alabama
+        option(value='AK') Alaska
+        option(value='AZ') Arizona
+        option(value='AR') Arkansas
+        option(value='CA') California
+        option(value='CO') Colorado
+        option(value='CT') Connecticut
+        option(value='DE') Delaware
+        option(value='DC') District Of Columbia
+        option(value='FL') Florida
+        option(value='GA') Georgia
+        option(value='HI') Hawaii
+        option(value='ID') Idaho
+        option(value='IL') Illinois
+        option(value='IN') Indiana
+        option(value='IA') Iowa
+        option(value='KS') Kansas
+        option(value='KY') Kentucky
+        option(value='LA') Louisiana
+        option(value='ME') Maine
+        option(value='MD') Maryland
+        option(value='MA') Massachusetts
+        option(value='MI') Michigan
+        option(value='MN') Minnesota
+        option(value='MS') Mississippi
+        option(value='MO') Missouri
+        option(value='MT') Montana
+        option(value='NE') Nebraska
+        option(value='NV') Nevada
+        option(value='NH') New Hampshire
+        option(value='NJ') New Jersey
+        option(value='NM') New Mexico
+        option(value='NY') New York
+        option(value='NC') North Carolina
+        option(value='ND') North Dakota
+        option(value='OH') Ohio
+        option(value='OK') Oklahoma
+        option(value='OR') Oregon
+        option(value='PA') Pennsylvania
+        option(value='RI') Rhode Island
+        option(value='SC') South Carolina
+        option(value='SD') South Dakota
+        option(value='TN') Tennessee
+        option(value='TX') Texas
+        option(value='UT') Utah
+        option(value='VT') Vermont
+        option(value='VA') Virginia
+        option(value='WA') Washington
+        option(value='WV') West Virginia
+        option(value='WI') Wisconsin
+        option(value='WY') Wyoming
+      a#btnGetAlerts.btn.btn-danger.btn-sm.btnWeather.raised(role='button') Get Alerts
     #photoDisplay
       img(src='/assets/lightning.jpg' alt='Weather' width='725' height='500')
 

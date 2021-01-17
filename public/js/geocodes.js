@@ -26,6 +26,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
   });
 
+  const alertBtn = document.getElementById('btnGetAlerts');
+  if(typeof(alertBtn) != 'undefined' && alertBtn != null){
+    alertBtn.addEventListener("click", handleGetSelectedState);
+  }
+
   document.querySelectorAll('.btnWeather').forEach(item => {
     item.addEventListener('mouseout', event => {
       event.target.classList.add("raised");
@@ -49,6 +54,18 @@ const handleGetForecast = () => {
   let place = document.getElementById("formattedPlace").value
   let city = place.split(",")[0]
   window.location.href = "http://localhost:3000/weather?forecastUrl="+url+"&city="+city
+}
+
+const handleGetSelectedState = () => {
+
+  let stateSelect = document.getElementById("stateSelect");
+  let abbrev = stateSelect.options[stateSelect.selectedIndex].value;
+  let state = stateSelect.options[stateSelect.selectedIndex].text;
+
+  if(state !== "Select State"){
+    window.location.href = "http://localhost:3000/alerts?state="+state+"&abbrev="+abbrev
+  }
+  
 }
 
 const handleFindForecast = () => {
