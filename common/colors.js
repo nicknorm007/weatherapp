@@ -3,7 +3,7 @@ const ColorHash = require('color-hash');
 const getHSLAFromString = (str) => {
   let colorHash = new ColorHash({saturation: 1, lightness: 0.5});
   let hsl = colorHash.hsl(str);
-  return 'hsla(' + hsl[0] + ', 80%, 50%, 0.1)';
+  return 'hsla(' + hsl[0] + ', 80%, 50%, 0.35)';
 };
 
 const tempcolor_hsla_map = {

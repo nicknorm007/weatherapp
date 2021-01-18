@@ -3,9 +3,10 @@ body {
     background-image:url('/assets/sky2back.jpg');
   }
 .jumbotron {
-    background-image: url('/assets/cloudsback.jpg');
+    background-image: url('/assets/sky4back.jpg');
     border: 6px solid;
-    padding: 40px 10px;
+    padding: 60px 30px;
+    box-shadow: 5px 5px 5px 5px #264e5a;
   }
   /* Styles for listing table */
 .listing-table {
@@ -31,7 +32,7 @@ body {
   margin: 5px;
 }
 .btnWeather.raised {
-  box-shadow: 3px 3px 3px 3px #293c42;
+  box-shadow: 4px 4px 4px 4px #293c42;
 }
 div#cityGroupings {
   display: flex;
