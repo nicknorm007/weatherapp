@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  a#btnGoHomeCustom.btn.btn-primary.btn-sm(href='/' role='button') Back Home
+  hr
+  p.lead
+      | Enter a place in the United States to search for coordinates:
+  .mb-3
+    label.form-label(for='myplace') Place
+    input#myplace.form-control(type='text' placeholder='Boston, Massachusetts')
+  a#btnLookup.btn.btn-info.btn-lg(role='button') Lookup
+  .mb-3
+    label.form-label(for='latitude') Latitude
+    input#latitude.form-control(type='text' readonly='')
+  .mb-3
+    label.form-label(for='longitude') Longitude
+    input#longitude.form-control(type='text' readonly='')
+  .mb-3
+    label.form-label(for='timezone') Timezone
+    input#timezone.form-control(type='text' readonly='')
+  .mb-3
+    label.form-label(for='formattedPlace') Place
+    input#formattedPlace.form-control(type='text' readonly='')
+    input#customUrlForecast.form-control(type='hidden' readonly='')
+  a#btnFindForecastUrl.btn.btn-info.btn-lg(role='button') Find Forecast
+  .mb-3
+  alert.alert-success(id='customForecastUrl' role='alert')
+    | Success! Found forecast, click Get Forecast to get weather.
+  hr
+  a#btnGetCustomForecast.btn.btn-primary.btn-sm.disabled(role='button') Get Forecast
+  
+
+  

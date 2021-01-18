@@ -1,4 +1,34 @@
 extends layout
 
 block content
-  p No weather yet :(
+  a#btnGoHome.btn.btn-primary.btn-sm(href='/' role='button') Back Home
+  h1=`${city} Weather`
+  hr
+  .flex-container.tempbar
+    div Colder
+    div#lverycold(style=`background-color:` + `${colormap.very_cold}`) 32
+    div#lcold(style=`background-color:` + `${colormap.cold}`) 
+    div#lverycool(style=`background-color:` + `${colormap.very_cool}`) 
+    div#cool(style=`background-color:` + `${colormap.cool}`) 
+    div#warm(style=`background-color:` + `${colormap.warm}`) 
+    div#verywarm(style=`background-color:` + `${colormap.very_warm}`) 
+    div#hot(style=`background-color:` + `${colormap.hot}`) 
+    div#veryhot(style=`background-color:` + `${colormap.very_hot}`) 
+    div Hotter
+  if forecasts.length
+    table.listing-table.table-striped
+      tr
+        th Name
+        th Forecast
+        th Temperature
+        th Wind Speed
+        th Wind Direction
+      each forecast in forecasts
+        tr
+          td(style=`background-color:` + `${forecast.nameColor}`)= forecast.name
+          td= forecast.detailedForecast
+          td(style=`background-color:` + `${forecast.tempColor}`)= forecast.temperature
+          td= forecast.windSpeed
+          td= forecast.windDirection
+  else
+    p No forecasts
