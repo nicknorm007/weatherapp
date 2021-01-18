@@ -56,8 +56,8 @@ const weatherController = {
               alertsFeatures.push(alert.properties))
           }
           else{
-            alertsFeatures.push({areaDesc:"No alerts at this time!", 
-              headline:"", description:"", instruction:""})
+            alertsFeatures.push({areaDesc:"", 
+              headline:"No alerts at this time!", description:"", instruction:""})
           }
           res.render('alerts', { title: 'Alerts', alerts:alertsFeatures, state:state } );
         });

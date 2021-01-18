@@ -5,12 +5,17 @@ block content
     a#btnGoHomeAlerts.btn.btn-primary.btn-sm(href='/' role='button') Back Home
     h1=`Alerts for ${state}`
   hr
-  #alertsDesc.container-fluid(style=`background-color:hsla(350, 77%, 78%, 1)`)
-    each alert in alerts
-      | #[strong= `${alert.areaDesc}`]
+  each alert in alerts
+    button.collapsible(type='button') #[strong= `${alert.headline}`]
+    .content
+      p
+        | #[strong= `${alert.areaDesc}`]
       p
         | #[strong= `${alert.headline}`]
       p
         =`${alert.description}`
       p  
         =`${alert.instruction}`
+
+
+      
