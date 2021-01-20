@@ -19,6 +19,10 @@ To run:
 3. create .env file with geocode license you obtained above:  
 `OCD_API_KEY=<Your Key here>`. 
 4. npm run watch. 
-5. visit localhost:3000. 
+5. visit localhost:3000.  
+
+Author: Nick Norman
+
+
 
 
