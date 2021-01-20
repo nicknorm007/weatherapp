@@ -21,7 +21,7 @@ To run:
 4. npm run watch. 
 5. visit localhost:3000.  
 
-Author: Nick Norman
+Created by: Nick Norman
 
 
 
