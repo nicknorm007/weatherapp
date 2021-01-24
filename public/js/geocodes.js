@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 const handleLookup = () => { 
 
   let place = document.getElementById("myplace").value;
-  fetch("http://3.140.247.76/custom/lookup?place="+place)
+  fetch("http://3.140.247.76:3000/custom/lookup?place="+place)
   .then(response => response.json())
   .then( (data) => {
     document.getElementById("latitude").value = data.geometry.lat;
@@ -57,7 +57,7 @@ const handleGetForecast = () => {
   let url = document.getElementById("customUrlForecast").value
   let place = document.getElementById("formattedPlace").value
   let city = place.split(",")[0]
-  window.location.href = "http://3.140.247.76/weather?forecastUrl="+url+"&city="+city
+  window.location.href = "http://3.140.247.76:3000/weather?forecastUrl="+url+"&city="+city
 }
 
 const handleGetSelectedState = () => {
@@ -67,7 +67,7 @@ const handleGetSelectedState = () => {
   let state = stateSelect.options[stateSelect.selectedIndex].text;
 
   if(state !== "Select State"){
-    window.location.href = "http://3.140.247.76/alerts?state="+state+"&abbrev="+abbrev
+    window.location.href = "http://3.140.247.76:3000/alerts?state="+state+"&abbrev="+abbrev
   }
   
 }
