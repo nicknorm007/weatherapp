@@ -38,6 +38,9 @@ div#cityGroupings {
   display: flex;
   align-items: center;
 }
+div#cityGroupingsCustom {
+  margin-top: 50px;
+}
 #btnGetAlerts {
   margin-bottom: 8px;
 }

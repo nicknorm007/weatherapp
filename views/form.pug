@@ -9,28 +9,26 @@ block content
     p
       | Choose from our favorite places or enter your own custom place:
     #cityGroupings
-      a#btnTewksburyWeather.btn.btnWeather.raised(
+      a#btnTewksburyWeather.btn.btn-sm.btnWeather.raised(
         href='/weather?forecastUrl=none&city=Tewksbury' 
         role='button' style=`background-color:` + `${citymap.Tewksbury.color}`)=citymap.Tewksbury.name
-      a#btnBostonWeather.btn.btnWeather.raised(
+      a#btnBostonWeather.btn.btn-sm.btnWeather.raised(
         href='/weather?forecastUrl=none&city=Boston' 
         role='button' style=`background-color:` + `${citymap.Boston.color}`)=citymap.Boston.name
-      a#btnHyannisWeather.btn.btnWeather.raised(
-        href='/weather?forecastUrl=none&city=Hyannis' 
-        role='button' style=`background-color:` + `${citymap.Hyannis.color}`)=citymap.Hyannis.name
-      a#btnOrlandoWeather.btn.btnWeather.raised(
+      a#btnOrlandoWeather.btn.btn-sm.btnWeather.raised(
         href='/weather?forecastUrl=none&city=Orlando' 
         role='button' style=`background-color:` + `${citymap.Orlando.color}`)=citymap.Orlando.name
-      a#btnMiamiWeather.btn.btnWeather.raised(
+      a#btnMiamiWeather.btn.btn-sm.btnWeather.raised(
         href='/weather?forecastUrl=none&city=Miami' 
         role='button' style=`background-color:` + `${citymap.Miami.color}`)=citymap.Miami.name
-      a#btnDenverWeather.btn.btnWeather.raised(
+      a#btnDenverWeather.btn.btn-sm.btnWeather.raised(
         href='/weather?forecastUrl=none&city=Denver' 
         role='button' style=`background-color:` + `${citymap.Denver.color}`)=citymap.Denver.name
-      a#btnSanFranWeather.btn.btnWeather.raised(
+      a#btnSanFranWeather.btn.btn-sm.btnWeather.raised(
         href='/weather?forecastUrl=none&city=San Francisco' 
         role='button' style=`background-color:` + `${citymap.San_Francisco.color}`)=citymap.San_Francisco.name     
-      a#btnCustomWeather.btn.btn-success.btnWeather.raised(href='/custom' role='button') Custom Place
+    #cityGroupingsCustom
+      a#btnCustomWeather.btn.btn-sm.btn-success.btnWeather.raised(href='/custom' role='button') Custom Place
     hr.my-4
     p
       | Select state to see weather alerts:

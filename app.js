@@ -12,7 +12,8 @@ app.set('view engine', 'pug');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', routes);
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname,"public")));
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use('/fonts', express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
 
 module.exports = app;

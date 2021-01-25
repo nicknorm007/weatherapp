@@ -23,6 +23,7 @@ block content
         th Temperature
         th Wind Speed
         th Wind Direction
+        th Precip
       each forecast in forecasts
         tr
           td(style=`background-color:` + `${forecast.nameColor}`)= forecast.name
@@ -30,5 +31,6 @@ block content
           td(style=`background-color:` + `${forecast.tempColor}`)= forecast.temperature
           td= forecast.windSpeed
           td= forecast.windDirection
+          td.precip
   else
     p No forecasts
