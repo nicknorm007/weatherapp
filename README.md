@@ -11,7 +11,7 @@ Requires Node 14+.
 Requires License to convert places to coordinates (free option available for testing) at OpenCage references above. 
 
 
-To run:  
+To run locally:  
 
 
 1. Clone. 
