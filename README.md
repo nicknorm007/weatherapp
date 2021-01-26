@@ -21,6 +21,8 @@ To run locally:
 4. geocodes.js -> s/weather.nicksoddsandends.com/localhost:3000
 5. npm run watch
 
+-Also includes Dockerfile
+
 Created by: Nick Norman
 
 
