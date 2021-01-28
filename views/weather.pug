@@ -31,6 +31,26 @@ block content
           td(style=`background-color:` + `${forecast.tempColor}`)= forecast.temperature
           td= forecast.windSpeed
           td= forecast.windDirection
-          td.precip
+          if forecast.icon=="sun"
+            td.precip
+              span(style='font-size: 3em; color:yellow;')
+                i.fas.fa-sun
+          else if forecast.icon=="snow"
+            td.precip
+              span(style='font-size: 3em; color:white;')
+                i.fas.fa-snowflake
+          else if forecast.icon=="rain"
+            td.precip
+              span(style='font-size: 3em; color:gray;')
+                i.fas.fa-cloud-rain
+          else if forecast.icon=="clouds"
+            td.precip
+              span(style='font-size: 3em; color:gray;')
+                i.fas.fa-cloud
+          else
+            td.precip
+
+          
+
   else
     p No forecasts

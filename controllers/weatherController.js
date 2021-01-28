@@ -15,7 +15,8 @@ const weatherController = {
           const forecasts = forecast_data.map((forecast, index, array) => {
             let tColor = colors.determineTemperatureColor(forecast.temperature);
             let nColor = colors.getHSLAFromString(forecast.name);
-            return ({ ...forecast, tempColor: tColor, nameColor: nColor });
+            let iconKeyword = colors.determineForecastIcon(forecast.detailedForecast)
+            return ({ ...forecast, tempColor: tColor, nameColor: nColor, icon: iconKeyword });
           });
         res.render('weather', { title: 'Weather data', forecasts: forecasts, city: city,
           colormap: colors.tempcolor_hsla_map});

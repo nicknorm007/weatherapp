@@ -1,3 +1,6 @@
+//const URL_REMOTE="weather.nicksoddsandends.com"
+const URL_REMOTE="localhost:3000"
+
 document.addEventListener("DOMContentLoaded", function(event) {
     
   const collapse = document.getElementsByClassName("collapsible");
@@ -44,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 const handleLookup = () => { 
 
   let place = document.getElementById("myplace").value;
-  fetch("http://weather.nicksoddsandends.com/custom/lookup?place="+place)
+  fetch("http://" + URL_REMOTE + "/custom/lookup?place="+place)
   .then(response => response.json())
   .then( (data) => {
     document.getElementById("latitude").value = data.geometry.lat;
@@ -57,7 +60,7 @@ const handleGetForecast = () => {
   let url = document.getElementById("customUrlForecast").value
   let place = document.getElementById("formattedPlace").value
   let city = place.split(",")[0]
-  window.location.href = "http://weather.nicksoddsandends.com/weather?forecastUrl="+url+"&city="+city
+  window.location.href = "http://" + URL_REMOTE + "/weather?forecastUrl="+url+"&city="+city
 }
 
 const handleGetSelectedState = () => {
@@ -67,7 +70,7 @@ const handleGetSelectedState = () => {
   let state = stateSelect.options[stateSelect.selectedIndex].text;
 
   if(state !== "Select State"){
-    window.location.href = "http://weather.nicksoddsandends.com/alerts?state="+state+"&abbrev="+abbrev
+    window.location.href = "http://" + URL_REMOTE + "/alerts?state="+state+"&abbrev="+abbrev
   }
   
 }

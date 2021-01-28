@@ -39,7 +39,22 @@ const transformCityColorMap = (colorMap) => {
   }
   return color_map;
 };
-
+const determineForecastIcon = (description) => {
+  let desc = description.toLowerCase()
+  if(desc.includes("snow")){
+    return "snow"
+  }
+  if( ( desc.includes("rain") || desc.includes("showers") )){
+    return "rain"
+  }
+  if(desc.includes("sunny")){
+    return "sun"
+  }
+  if(desc.includes("cloudy")){
+    return "clouds"
+  }
+  return ""
+}
 const determineTemperatureColor = (temp) => {
 
   if (temp > 90) {
@@ -74,3 +89,4 @@ exports.tempcolor_hsla_map = tempcolor_hsla_map;
 exports.determineTemperatureColor = determineTemperatureColor;
 exports.city_color_map = city_color_map;
 exports.transformCityColorMap = transformCityColorMap;
+exports.determineForecastIcon = determineForecastIcon;
