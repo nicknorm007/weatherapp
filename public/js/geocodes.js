@@ -1,5 +1,5 @@
 //const URL_REMOTE="weather.nicksoddsandends.com"
-const URL_REMOTE="localhost:3000"
+const URL_REMOTE="weather.nicksoddsandends.com"
 
 document.addEventListener("DOMContentLoaded", function(event) {
     
