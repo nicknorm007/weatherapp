@@ -11,15 +11,17 @@ Requires Node 14+.
 Requires License to convert places to coordinates (free option available for testing) at OpenCage references above. 
 
 
-To run:  
+To run locally:  
 
 
 1. Clone. 
 2. npm install. 
 3. create .env file with geocode license you obtained above:  
 `OCD_API_KEY=<Your Key here>`. 
-4. npm run watch. 
-5. visit localhost:3000.  
+4. geocodes.js -> s/weather.nicksoddsandends.com/localhost:3000
+5. npm run watch
+
+-Also includes Dockerfile
 
 Created by: Nick Norman
 
