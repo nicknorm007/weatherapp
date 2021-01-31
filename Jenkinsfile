@@ -13,7 +13,6 @@ pipeline {
      
     stage('Build') {
       steps {
-        cleanWs()
         sh 'npm install'
         sh 'echo "------> Setting OCD Key <------"'
         sh 'touch .env'
