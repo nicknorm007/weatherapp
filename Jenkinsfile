@@ -15,12 +15,12 @@ pipeline {
       steps {
         cleanWs()
         sh 'npm install'
-        sh echo "------> Setting key OCD <------"
-        sh touch .env
-        sh echo "OCD_API_KEY=344bc7468f60465cb226f347cb33b2cc" > .env
-        sh echo "------> Installing node modules <------"
-        sh npm install pm2@latest -g
-        sh npm install
+        sh 'echo "------> Setting OCD Key <------"'
+        sh 'touch .env'
+        sh 'echo "OCD_API_KEY=344bc7468f60465cb226f347cb33b2cc" > .env'
+        sh 'echo "------> Installing node modules <------"'
+        sh 'npm install pm2@latest -g'
+        sh 'npm install'
       }
     }  
     
