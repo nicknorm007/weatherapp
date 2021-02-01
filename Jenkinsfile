@@ -20,6 +20,11 @@ pipeline {
         sh 'echo "------> Installing node modules <------"'
         sh 'npm install pm2@latest -g'
         sh 'npm install'
+        sh "echo ------> Stop if running <------"
+        sh 'pm2 stop weather-app'
+        withEnv(['JENKINS_NODE_COOKIE=dontKillMe']) {
+          sh 'pm2 start start.js --name weather-app'
+        }
       }
     }  
     
