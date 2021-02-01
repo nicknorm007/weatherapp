@@ -7,7 +7,7 @@ pipeline {
         
     stage('Git') {
       steps {
-        git 'https://github.com/nicknorm007/weatherapp.git'
+        git branch: "develop", url: 'https://github.com/nicknorm007/weatherapp.git'
       }
     }
      
