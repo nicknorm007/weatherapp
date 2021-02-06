@@ -1,4 +1,3 @@
-//const URL_REMOTE="weather.nicksoddsandends.com"
 const URL_REMOTE="weather.nicksoddsandends.com"
 
 document.addEventListener("DOMContentLoaded", function(event) {
