@@ -21,6 +21,7 @@ pipeline {
         sh 'npm install pm2@latest -g'
         sh 'npm install'
         sh 'echo "------> Stop if running app <------"'
+        sh 'pm2 delete -s weather-app || :'
         withEnv(['JENKINS_NODE_COOKIE=dontKillMe']) {
           sh 'pm2 start start.js --name weather-app'
         }
