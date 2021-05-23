@@ -25,6 +25,8 @@ To run locally:
 
 Created by: Nick Norman
 
+Site: http://weather.nicksoddsandends.com/
+
 
 
 
