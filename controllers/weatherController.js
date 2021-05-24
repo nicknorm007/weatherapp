@@ -23,7 +23,8 @@ const weatherController = {
       });
     },
     getCustom (req, res) {
-      res.render('custom', { title: 'Custom'});
+      let envurl = process.env.ENV_URL || "weather.nicksoddsandends.com"
+      res.render('custom', { title: 'Custom', wenv: envurl});
     },
     getCustomLookup (req, res) {
 
