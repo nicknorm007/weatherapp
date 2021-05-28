@@ -18,7 +18,7 @@ To run locally:
 2. npm install. 
 3. create .env file with geocode license you obtained above:  
 `OCD_API_KEY=<Your Key here>`. 
-4. geocodes.js -> s/weather.nicksoddsandends.com/localhost:3000
+4. in .env file also add ENV_URL to point to your local server, i.e "localhost:3000"
 5. npm run watch
 
 -Also includes Dockerfile
