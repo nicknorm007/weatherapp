@@ -17,7 +17,8 @@ router.get('/alerts', weatherController.getAlerts);
 
 router.get('/', (req, res) => {
   const citymap = colors.transformCityColorMap(colors.city_color_map)
-  res.render('form', { title: 'Weather home', citymap: citymap });
+  let envurl = process.env.ENV_URL || "weather.nicksoddsandends.com"
+  res.render('form', { title: 'Weather home', citymap: citymap, wenvw: envurl });
   });
 
 module.exports = router

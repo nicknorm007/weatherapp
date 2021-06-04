@@ -66,7 +66,7 @@ const handleGetSelectedState = () => {
   let state = stateSelect.options[stateSelect.selectedIndex].text;
 
   if(state !== "Select State"){
-    window.location.href = "http://" + envUrl() + "/alerts?state="+state+"&abbrev="+abbrev
+    window.location.href = "http://" + envUrlw() + "/alerts?state="+state+"&abbrev="+abbrev
   }
   
 }
@@ -116,6 +116,10 @@ const initPanels = () => {
 }
 const envUrl = () => {
   let wurl = document.getElementById("customWenv").value
+  return wurl
+}
+const envUrlw = () => {
+  let wurl = document.getElementById("customWenvW").value
   return wurl
 }
   
