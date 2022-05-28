@@ -15,7 +15,7 @@ To run locally:
 
 
 1. Clone. 
-2. npm install. 
+2. npm install
 3. create .env file with geocode license you obtained above:  
 `OCD_API_KEY=<Your Key here>`. 
 4. in .env file also add ENV_URL to point to your local server, i.e "localhost:3000"
